@@ -1,0 +1,29 @@
+[package]
+name = "pay"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+anyhow = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+reqwest = { version = "0.12", features = ["json", "gzip"] }
+dotenvy = "0.15"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["fmt", "env-filter"] }
+tokio-stream = "0.1"
+futures = "0.3"
+base58 = "0.2"
+
+# solana
+solana-sdk = "3.0.0"
+solana-account-decoder = "3.0"
+solana-pubsub-client = "3.0.2"   # async PubSub API
+solana-rpc-client = "3.0.2"       # позже: HTTP RPC (async)
+solana-rpc-client-api = "3.0.2"   # типы конфигов/ответов (понадобится на шаге 2)
+solana-pubkey = "3.0.0"
+
+# spl-token utils
+spl-associated-token-account = "7"
+spl-token = { version = "8", features = ["no-entrypoint"] }
